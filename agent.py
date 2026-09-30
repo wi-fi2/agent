@@ -1,3 +1,4 @@
+import os
 import requests
 
 class LlamaAgent:
@@ -74,7 +75,7 @@ if __name__ == "__main__":
     agent = LlamaAgent(
         api_key="llama",  # Your Llama API key
         base_url="http://127.0.0.1:8080",  # Your Llama server base URL
-        stock_api_key="REMOVED_ALPHA_VANTAGE_KEY",  # Replace with your Alpha Vantage API key
+        stock_api_key=os.getenv("ALPHA_VANTAGE_API_KEY"),  # set ALPHA_VANTAGE_API_KEY in your environment
         system_message="You are a stock analysis assistant that also helps with general queries.",
     )
 
